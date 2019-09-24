@@ -26,4 +26,6 @@ public class Constants {
 	
 	public static final String VENDOR = "oracle";
 	
+	public static final String VENDOR2 = "mysql";
+	
 }
