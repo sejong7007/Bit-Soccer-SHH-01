@@ -24,6 +24,8 @@ public class Constants {
 								USERNAME = "c##sejong",
 								PASSWORD = "7007";
 	
-	public static final String VENDOR = "oracle";
+	public static final String VENDOR = "oracle"
+			
+			;
 	
 }
