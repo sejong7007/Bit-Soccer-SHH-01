@@ -1,0 +1,11 @@
+diff a/src/com/soccer/web/pool/Constants.java b/src/com/soccer/web/pool/Constants.java	(rejected hunks)
+@@ -24,6 +24,8 @@
+ 								USERNAME = "c##sejong",
+ 								PASSWORD = "7007";
+ 	
+-	public static final String VENDOR = "oracle";
++	public static final String VENDOR = "oracle"
++			
++			;
+ 	
+ }
