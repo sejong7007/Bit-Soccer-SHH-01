@@ -1,22 +1,20 @@
 package com.soccer.web.factory;
 
+import com.soccer.web.enums.DB;
+
 public class DatabaseFactory {
 	
 	public static Database createDatabase(String vendor) {
 		
 		Database db = null;
 				
-		switch(vendor) {
-		case "oracle":
+		switch(DB.valueOf(vendor)) {
+		case ORACLE:
 			db = new Oracle();
 			break;
-		case "mariadb":
+		case MARIADB:
 			break;
-		case "mysql":
-			break;
-		case "h2":
-			break;
-		case "db2":
+		case MYSQL:
 			break;
 		}
 		

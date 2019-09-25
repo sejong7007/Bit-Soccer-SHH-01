@@ -1,55 +1,47 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Bit Soccer</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<meta charset="UTF-8" />
+	<title>Document</title>
 </head>
 <body>
-<div>
-
-<h2><a id="2_p" href="#">2. 포지션 종류 보기</a></h2>
-
-<!-->팀아이디로 해당 팀의 포지션별 선수 검색기능 예) </!-->
-<h2>팀아이디와 포지션 입력하면 해당팀의 아이디와 포지션에 해당하는 선수를 찾아준다.</h2>
-<form id="4_f" action="<%=request.getContextPath()%>/player.do">
-팀아이디 <input type="text" name="teamId" /><br>
-포지션<input type="text" name="position" />
-<input type="hidden" name="action" value="find" />
-<input type="hidden" name="page" value="4_find_by_teamid_position" />
-<input type="submit" id="btn" value="전송" />
-</form>
-
-<!-->5.이름의 성과 키, 팀아이디를 넣고 해당 팀의 선수 정보를 받아오기  </!-->
-<h2>이름의 성과 키, 팀아이디를 넣고 해당 팀의 선수 정보를 받아오기</h2>
-<form id="5_f" action="<%=request.getContextPath()%>/player.do">
-팀아이디 : <input type="text" name="teamId" /><br /> 
-키 : <input type="text" name="height" /><br />
-성 : <input type="text" name="playerName" /><br />
-<input type="hidden" name="action" value="findbyheightnameplayerinfo"/>
-<input type="hidden" name="page" value="5_find_by_height_weight_name"/>
-<input type="submit" id="btn" value="전송"/>
-</form>
-
+<div id="wrapper" style="width:100%;height:100%">
+<h2>축구협회관리시스템</h2>
+	<form id="login_form" action="<%=request.getContextPath()%>/player.do">
+		<table border="1" style="width:300px; height:200px; margin:300px auto">
+			<tr>
+				<td style="width:300px">
+					ID : <input type="text" name="playerId" style="withh:100%" />
+				</td>
+				<td rowspan="2">
+				<input type="submit" id="btn" value="로그인" style="width:100%;height:100%"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					PW : <input type="text" name="solar" style="withh:100%" />
+				</td>
+			</tr>
+		</table>
+	<input type="hidden" name="action" value="login" />
+	<input type="hidden" name="page" value="home" />
+	</form>
+	
+	
+	<h3 style="width:100;margin:100px auto">
+		<a id="a_join" href="#">회원가입</a>
+	</h3>	
 </div>
 
 <script>
-$('#2_p').click(function(){
-	alert('버튼클릭!!');
-	location.assign('<%=request.getContextPath()%>/player.do?action=position&page=2_positions');
+$('#login_form').submit(function(){
+	alert('로그인 성공???');
 });
-
-$('#4_f').submit(function(){
-	alert('선수검색 결과화면으로 이동');
-});
-
-$('#5_f').submit(function(){
-	alert('키와 성으로 선수검색 결과화면으로 이동');
-});
-
 </script>
 
+
+	
 </body>
 </html>

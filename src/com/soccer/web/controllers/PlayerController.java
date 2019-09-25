@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.soccer.web.commands.Command;
+import com.soccer.web.commands.Receiver;
+import com.soccer.web.commands.Sender;
 import com.soccer.web.domains.PlayerBean;
 import com.soccer.web.domains.TeamBean;
 import com.soccer.web.pool.Constants;
@@ -25,9 +28,21 @@ public class PlayerController extends HttpServlet {
    
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		Receiver r = new Receiver();
+		Sender s = new Sender();
+		Command c = new Command();
+		
+		System.out.println("controller 도착");
+		
+		r.init(request);
+		s.forward(request, response);
+		
+		
+		/*
 		PlayerBean player = new PlayerBean();
 		player = null;
-				
+		
+		
 		switch(request.getParameter("action")) {
 		case "move" :
 			System.out.println("move 읽음");
@@ -59,5 +74,6 @@ public class PlayerController extends HttpServlet {
 				request.getParameter("page")))
 		.forward(request, response);
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		*/
 	}
 }
