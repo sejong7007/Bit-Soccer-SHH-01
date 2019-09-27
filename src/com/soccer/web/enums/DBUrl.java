@@ -20,7 +20,7 @@ public enum DBUrl {
 			url = "jdbc:mariadb://localhost:3306";
 			break;
 		}
-		return super.toString();
+		return url;
 	}
 	
 }

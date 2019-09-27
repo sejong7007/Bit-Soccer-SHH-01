@@ -7,6 +7,11 @@ import com.soccer.web.domains.PlayerBean;
 public interface PlayerService {
 
 	/*
+	 * Login_000 :  로그인에 따른 화면 이동
+	 */
+	public PlayerBean login(PlayerBean param);
+	
+	/*
 	 * SQL_TEST_002 :  포지션 종류(중복제거,없으면 빈공간)
 	 */
 	public List<String> findPositions();

@@ -10,19 +10,23 @@ import com.soccer.web.services.PlayerService;
 public class PlayerServiceImpl implements PlayerService{
 
 	private static PlayerServiceImpl instance = new PlayerServiceImpl();
-		
-	public static PlayerServiceImpl getInstance() {
-		return instance;
-	}
+	public static PlayerServiceImpl getInstance() {return instance;}
 	private PlayerServiceImpl() {}
 
+
+	
+	@Override
+	public PlayerBean login(PlayerBean param) {
+		
+		System.out.println("6.서비스 도착 : 아이디 : "+param.getPlayerId()+"비밀번호 : "+param.getSolar());
+		
+		return PlayerDaoImpl.getInstance().selectbyplayerIdsolar(param);
+	}
+	
 	@Override
 	public List<String> findPositions() {
 		System.out.println("findPositions 도착");
 		return PlayerDaoImpl.getInstance().selectPositions();
-		
-		//List<String> arr = PlayerDaoImpl.getInstance().selectPositions();
-		//System.out.println(arr);
 	}
 
 	@Override

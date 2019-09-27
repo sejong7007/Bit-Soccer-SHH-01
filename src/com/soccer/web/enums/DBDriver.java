@@ -19,8 +19,9 @@ public enum DBDriver {
 		case MARIADB_DRIVER:
 			driver = "com.mysql.jdbc.Driver";
 			break;
+		default: break;
 		}
-		return super.toString();
+		return driver;
 	}
 	
 }

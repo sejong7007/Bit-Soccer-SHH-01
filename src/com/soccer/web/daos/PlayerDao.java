@@ -15,4 +15,8 @@ public interface PlayerDao {
 	
 	public List<PlayerBean> selectByHeightPlayerName(PlayerBean param);
 	
+	public PlayerBean selectbyplayerIdsolar(PlayerBean param);
+	
+	public List<PlayerBean> selectByMany(PlayerBean param);
+	
 }

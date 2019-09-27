@@ -1,8 +1,6 @@
 package com.soccer.web.controllers;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,14 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.soccer.web.commands.Command;
 import com.soccer.web.commands.Receiver;
 import com.soccer.web.commands.Sender;
-import com.soccer.web.domains.PlayerBean;
-import com.soccer.web.domains.TeamBean;
-import com.soccer.web.pool.Constants;
-import com.soccer.web.serviceimpls.PlayerServiceImpl;
-import com.soccer.web.services.PlayerService;
 
 
 @WebServlet("/player.do")
@@ -28,52 +20,11 @@ public class PlayerController extends HttpServlet {
    
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		Receiver r = new Receiver();
-		Sender s = new Sender();
-		Command c = new Command();
+		System.out.println("playercontroller 도착");
+	
 		
-		System.out.println("controller 도착");
+		Receiver.init(request);
+		Sender.forward(request, response);
 		
-		r.init(request);
-		s.forward(request, response);
-		
-		
-		/*
-		PlayerBean player = new PlayerBean();
-		player = null;
-		
-		
-		switch(request.getParameter("action")) {
-		case "move" :
-			System.out.println("move 읽음");
-			break;
-			
-		case "position":
-			request.setAttribute("positions",PlayerServiceImpl.getInstance().findPositions());
-			break;
-		
-		case "find":
-			System.out.println("find 읽음");
-			player.setTeamId(request.getParameter("teamId"));
-			player.setPosition(request.getParameter("position"));
-			request.setAttribute("player",PlayerServiceImpl.getInstance().findByTeamIdPosition(player));
-			break;
-			
-		case "findbyheightnameplayerinfo":
-			System.out.println("findbyheightnameplayerinfo 읽음");
-			player.setTeamId(request.getParameter("teamId"));
-			player.setHeight(request.getParameter("height"));
-			player.setPlayerName(request.getParameter("playerName"));
-			request.setAttribute("player5",PlayerServiceImpl.getInstance().findByHeightPlayerName(player));
-			break;
-		}
-		
-		request.getRequestDispatcher
-		(String.format(Constants.VIEW_PATH,
-				"player",
-				request.getParameter("page")))
-		.forward(request, response);
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		*/
 	}
 }

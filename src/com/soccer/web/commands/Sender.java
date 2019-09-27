@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 
 public class Sender {
 
-		public void forward(HttpServletRequest request, HttpServletResponse response) {
+		public static void forward(HttpServletRequest request, HttpServletResponse response) {
 			
 			try {
 				request
-				.getRequestDispatcher(Receiver.cmd.view)
+				.getRequestDispatcher(Receiver.cmd.getView())
 				.forward(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
