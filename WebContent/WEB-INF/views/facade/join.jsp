@@ -1,11 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<jsp:include page="../common/head.jsp"/>
-
-
-
-
 <div></div>
 <div>
 <h2>회원가입화면</h2>
@@ -18,7 +13,7 @@
 	<table>
 		<tr>
 			<td>아이디</td>
-			<td><input type="text" name="playerId" /></td>
+			<td><input id="joinUsername" type="text" name="playerId" /></td>
 		</tr>
 		<tr>
 			<td>이름</td>
@@ -58,7 +53,7 @@
 		</tr>
 		<tr>
 			<td>솔라</td>
-			<td><input type="text" name="solar" /></td>
+			<td><input id="joinPassword" type="text" name="solar" /></td>
 		</tr>
 		<tr>
 			<td>키(cm)</td>
@@ -69,17 +64,19 @@
 			<td><input type="text" name="weight" /></td>
 		</tr>
 	</table>
-	<input type="hidden" name="action" value="join" />
+	<input type="hidden" name="action" value="create" />
     <input type="hidden" name="page" value="login" />
+    <input id="join_btn" type="button" value="회원가입" />
+    
 </form>
 </div>
 <div></div>
 <div></div>
 <div>
-	<h3><a id="a_join" herf="#">회원가입</a></h3>
+	<h3><a id="a_back" href="#">뒤로가기</a></h3>
 </div>
 <div>
-	<h3><a id="a_back" href="#">뒤로가기</a></h3>
+	
 </div>
 
 
@@ -91,5 +88,5 @@ app.init('${ctx}');
 </script>
 
 
-<jsp:include page="../common/foot.jsp"/>
+
 

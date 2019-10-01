@@ -13,15 +13,26 @@ public class Commander {
 		Command o = null;
 		
 		switch(Action.valueOf(request.getParameter("action").toUpperCase())) {
-		case MOVE :
-			o = new MoveCommand(request);
+		case CREATE :
+			o = new CreateCommand(request);
 			break;
 		case SEARCH :
 			o = new SearchCommand();
 			break;
+		case UPDATE : 
+			break;
+		case DELETE : 
+			break;
+		case MOVE :
+			o = new MoveCommand(request);
+			break;
 		case LOGIN :
 			o = new LoginCommand(request);
 			break;
+		case JOIN :
+			o = new JoinCommand(request);
+			break;
+			
 		default : 
 			break;
 		}

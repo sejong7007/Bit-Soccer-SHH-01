@@ -12,6 +12,11 @@ public interface PlayerService {
 	public PlayerBean login(PlayerBean param);
 	
 	/*
+	 * Login_000 :  회원가입에 따른 화면 이동
+	 */
+	public boolean join(PlayerBean param);
+	
+	/*
 	 * SQL_TEST_002 :  포지션 종류(중복제거,없으면 빈공간)
 	 */
 	public List<String> findPositions();

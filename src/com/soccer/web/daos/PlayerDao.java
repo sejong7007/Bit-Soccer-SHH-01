@@ -19,4 +19,6 @@ public interface PlayerDao {
 	
 	public List<PlayerBean> selectByMany(PlayerBean param);
 	
+	public boolean insertPlayerBean(PlayerBean param);
+	
 }

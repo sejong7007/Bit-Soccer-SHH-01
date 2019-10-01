@@ -36,12 +36,16 @@ public class FacadeController extends HttpServlet {
 			
 		}
 			
+		request.setAttribute("page","login");
+		
 		request.getRequestDispatcher(String.format(Constants.DOUBLE_PATH
 				,request.getServletPath().substring(1,request.getServletPath().indexOf("."))
-				,"login"))
+				,"main"))
 			.forward(request, response);	
 		
-		//request.getRequestDispatcher("/WEB-INF/views/facade/login.jsp").forward(request, response);
+		
+		
+		
 			
 	}
 }

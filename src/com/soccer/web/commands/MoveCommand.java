@@ -11,7 +11,8 @@ public class MoveCommand extends Command{
 		setRequest(request);
 		setDomain("facade");
 		setAction(request.getParameter("action"));
-		setPage(request.getParameter("page"));
+		setPage("main");
+		request.setAttribute("page",request.getParameter("page"));
 		execute();
 	}
 	

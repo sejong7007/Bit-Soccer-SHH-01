@@ -1,5 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<!-->
+팀아이디가  ${player5.teamId}인 팀에서 키  ${player5.height}이상이고 성이 ${player5.playerName}인 선수 정보
+쿼리</!-->
+
+
+<!-->질문</!-->
+
+${player5}
+
+
 <!DOCTYPE html>
 <html>
 <head>

@@ -20,6 +20,13 @@ public class PlayerServiceImpl implements PlayerService{
 		
 		return PlayerDaoImpl.getInstance().selectbyplayerIdsolar(param);
 	}
+
+	@Override
+	public boolean join(PlayerBean param) {
+		
+		return PlayerDaoImpl.getInstance().insertPlayerBean(param);
+		
+	}
 	
 	@Override
 	public List<String> findPositions() {

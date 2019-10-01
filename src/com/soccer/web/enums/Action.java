@@ -2,5 +2,6 @@ package com.soccer.web.enums;
 
 public enum Action {
 
-	MOVE, SEARCH, JOIN, LOGIN
+	MOVE, JOIN, LOGIN, 
+	CREATE, SEARCH, UPDATE, DELETE
 }

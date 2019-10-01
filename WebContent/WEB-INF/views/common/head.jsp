@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+<!doctype html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8" />
 	<title>Document</title>
@@ -10,3 +12,6 @@
 </head>
 <body>
 <div class="wrapper" style="width:100%; height:100%">
+<div></div><div></div><div></div>
+<div></div><div>
+

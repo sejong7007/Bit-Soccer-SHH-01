@@ -120,5 +120,46 @@ public class PlayerDaoImpl implements PlayerDao {
 		}
 		return list;
 	}
+	@Override
+	public boolean insertPlayerBean(PlayerBean param) {
+		
+		boolean flag = false ;
+		
+		System.out.println("회원가입 DAO 까지 도착");
+		
+		String sql = "INSERT INTO PLAYER (PLAYER_ID, PLAYER_NAME, TEAM_ID, SOLAR)\r\n" + 
+				"VALUES ( ?,'홍길동','K03',?)";
+		try {
+
+			PreparedStatement stmt = DatabaseFactory
+					.createDatabase(Constants.VENDOR)
+					.getConnection()
+					.prepareStatement(sql);
+			stmt.setString(1, param.getPlayerId());
+		    stmt.setString(2, param.getSolar());
+			//stmt.setString(2, param.getPlayerName());
+			//stmt.setString(3, param.getTeamId());
+			//stmt.setString(4, param.getEPlayerName());
+			//stmt.setString(5, param.getNickname());
+			//stmt.setString(6, param.getJoinYyyy());
+			//stmt.setString(7, param.getPosition());
+			//stmt.setString(8, param.getBackNo());
+			//stmt.setString(9, param.getNation());
+			//stmt.setString(10, param.getBirthDate());
+			//stmt.setString(11, param.getSolar());
+			//stmt.setString(12, param.getHeight());
+			//stmt.setString(13, param.getWeight());
+			int rs = stmt.executeUpdate();
+		
+			flag = (rs==1);
+			
+			} catch (Exception e) {
+
+			e.printStackTrace();
+			}
+
+		return flag;
+		
+	}
 	
 }
