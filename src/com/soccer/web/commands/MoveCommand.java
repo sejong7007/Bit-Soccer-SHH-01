@@ -16,8 +16,6 @@ public class MoveCommand extends Command{
 	}
 	
 	public void execute() {
-		
-		
 				
 		super.execute();
 	}

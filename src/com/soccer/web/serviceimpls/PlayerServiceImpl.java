@@ -18,8 +18,6 @@ public class PlayerServiceImpl implements PlayerService{
 	@Override
 	public PlayerBean login(PlayerBean param) {
 		
-		System.out.println("6.서비스 도착 : 아이디 : "+param.getPlayerId()+"비밀번호 : "+param.getSolar());
-		
 		return PlayerDaoImpl.getInstance().selectbyplayerIdsolar(param);
 	}
 	

@@ -19,14 +19,19 @@ public class LoginCommand extends Command {
 		execute();
 	}
 	
+	@SuppressWarnings("unused")
 	public void execute() {
 		
 		PlayerBean param = new PlayerBean();
 		param.setPlayerId(request.getParameter("playerId"));
 		param.setSolar(request.getParameter("solar"));
 						
-		PlayerServiceImpl.getInstance().login(param);
-		setPage(request.getParameter("page"));
+		param = PlayerServiceImpl.getInstance().login(param);
+
+		System.out.println(request.getParameter("page"));
+		
+		setPage((param!=null)? request.getParameter("page") :"login");
+		
 				
 		super.execute();
 	}

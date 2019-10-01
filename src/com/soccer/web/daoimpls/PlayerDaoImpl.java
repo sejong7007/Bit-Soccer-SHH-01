@@ -64,7 +64,6 @@ public class PlayerDaoImpl implements PlayerDao {
 			e.printStackTrace();
 		}
 		
-		System.out.println("결과"+player);
 		return player;
 	}
 
