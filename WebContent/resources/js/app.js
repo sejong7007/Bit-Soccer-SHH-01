@@ -9,6 +9,7 @@ var app = (()=>{
 			playerService.moveLogin(ctx);
 			playerService.movePlayer(ctx);
 			playerService.backPositions(ctx);
+			playerService.searchPlayer4(ctx);
 			
 		}
 	};
@@ -84,6 +85,19 @@ var playerService = (()=>{
 			$('#position_back').click(()=>{
 				alert('포지션질문 화면으로 이동');
 				location.assign(ctx+'/player.do?action=move&page=2_positions');
+			});
+		},
+		
+		searchPlayer4: (ctx)=>{
+			$('#4_f_q_move').click(()=>{
+				if($('#search_4_id').val()==='' || $('#search_4_position').val()===''){
+					alert('필수값이 없습니다.')
+				}else{
+					alert('입력한 아이디 : '+ $('#search_4_id').val()
+							+'  포지션 : ' + $('#search_4_position').val());
+					$('#4_f_q').attr('action',ctx+'/player.do');
+					$('#4_f_q').submit();
+				}
 			});
 		}
 		

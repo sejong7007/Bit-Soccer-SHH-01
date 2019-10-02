@@ -34,6 +34,8 @@ public class FacadeController extends HttpServlet {
 						,request.getContextPath() + "/resources/" + r.toString().toLowerCase());
 			}
 			
+			//request.getSession().setAttribute(r.toString().toLowerCase(), 3항);
+			
 		}
 			
 		request.setAttribute("page","login");
