@@ -8,6 +8,7 @@ var app = (()=>{
 			playerService.moveJoin(ctx);
 			playerService.moveLogin(ctx);
 			playerService.movePlayer(ctx);
+			playerService.backPositions(ctx);
 			
 		}
 	};
@@ -82,7 +83,7 @@ var playerService = (()=>{
 		backPositions: (ctx)=>{
 			$('#position_back').click(()=>{
 				alert('포지션질문 화면으로 이동');
-				location.assign(ctx+'/player.do?action=search&page=2_positions');
+				location.assign(ctx+'/player.do?action=move&page=2_positions');
 			});
 		}
 		
