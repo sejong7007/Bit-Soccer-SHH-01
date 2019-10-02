@@ -10,12 +10,13 @@ public class LoginCommand extends Command {
 	public LoginCommand(HttpServletRequest request) {
 
 		setRequest(request);
-		/*
+		
 		setDomain(request.getServletPath()
 				.substring(1,request.getServletPath().indexOf(".")));
-		*/
-		setDomain("facade");
+		
+		//setDomain("facade");
 		setAction(request.getParameter("action"));
+		request.setAttribute("page","2_positions");
 		execute();
 	}
 	

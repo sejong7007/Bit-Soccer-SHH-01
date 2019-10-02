@@ -28,7 +28,7 @@
                   </tr>
             </table>
       <input type="hidden" name="action" value="login" />
-      <input type="hidden" name="page" value="home" />
+      <input type="hidden" name="page" value="main" />
 	</form>
 </div>
 <div></div>
